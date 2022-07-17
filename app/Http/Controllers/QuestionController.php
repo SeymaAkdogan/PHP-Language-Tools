@@ -19,6 +19,7 @@ class QuestionController extends Controller
         $randomQuestion = DB::table('Questions')
             ->inRandomOrder()
             ->first();
+
         $check_status = Answers::where([
             'question_id' => $randomQuestion->id,
         ])->first();
@@ -26,8 +27,9 @@ class QuestionController extends Controller
         // If Complete test
         if ($user) {
             $answers = Answers::where([
-                'user_id' => $user->id
+                'user_id' => $user->id,
             ])->count();
+
             $questions = Question::get();
             if ($answers == $questions->count()) {
 
@@ -80,7 +82,7 @@ class QuestionController extends Controller
         if (!$check_status) {
             $words = [];
             array_push($words, $randomQuestion->english_name);
-            array_push($words, $randomQuestion->serbian_name);
+            array_push($words, $randomQuestion->turkish_name);
 
             return view('question', [
                 'question' => $randomQuestion,
@@ -93,10 +95,7 @@ class QuestionController extends Controller
         } else {
             return QuestionController::getQuestions();
         }
-
     }
-
-
 
     public static function checkAnswer(Request $request, $word, $id)
     {
@@ -116,12 +115,12 @@ class QuestionController extends Controller
         if ($check_question) {
             if ($question['english_name'] == $word) {
 
-                if (Str::lower($question['serbian_name']) == Str::lower($answer)) {
+                if (Str::lower($question['turkish_name']) == Str::lower($answer)) {
                     $check_question['status'] = true;
                     $check_question->save();
                     return redirect('/');
                 }
-            } elseif ($question['serbian_name'] == $word) {
+            } elseif ($question['turkish_name'] == $word) {
                 if (Str::lower($question['english_name']) == Str::lower($answer)) {
                     $check_question['status'] = true;
                     $check_question->save();
@@ -131,7 +130,7 @@ class QuestionController extends Controller
         } else {
             if ($question['english_name'] == $word) {
 
-                if (Str::lower($question['serbian_name']) == Str::lower($answer)) {
+                if (Str::lower($question['turkish_name']) == Str::lower($answer)) {
                     Answers::create([
                         'user_id' => Auth::user()->id,
                         'question_id' => $id,
@@ -146,7 +145,7 @@ class QuestionController extends Controller
                     ]);
                     return redirect('/');
                 }
-            } elseif ($question['serbian_name'] == $word) {
+            } elseif ($question['turkish_name'] == $word) {
                 if (Str::lower($question['english_name']) == Str::lower($answer)) {
                     Answers::create([
                         'user_id' => Auth::user()->id,

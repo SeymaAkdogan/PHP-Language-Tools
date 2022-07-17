@@ -11,7 +11,7 @@ class Question extends Model
     protected $table = 'Questions';
     protected $fillable = [
         'english_name',
-        'serbian_name',
+        'turkish_name',
         'image',
     ];
 }

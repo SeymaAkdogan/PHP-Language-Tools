@@ -15,64 +15,49 @@ class QuestionsTableSeeder extends Seeder
     {
         DB::table('Questions')->insert([
             [
-                'english_name'=>'happy',
-                'serbian_name'=>'srećan',
-                'image' => 'happy.jpg'
-            ],
-            [
-                'english_name'=>'nice',
-                'serbian_name'=>'lijepo',
-                'image' => 'fashion.jpg'
-            ],
-            [
-                'english_name'=>'friend',
-                'serbian_name'=>'prijatelju',
-                'image' => 'friend.jpg'
-            ],
-            [
-                'english_name'=>'explosion',
-                'serbian_name'=>'eksplozija',
-                'image' => 'explosion.jpg'
-            ],
-            [
-                'english_name'=>'carrot',
-                'serbian_name'=>'šargarepa',
-                'image' => 'carrot.jpg'
-            ],
-            [
-                'english_name'=>'car',
-                'serbian_name'=>'auto',
-                'image' => 'car.jpg'
-            ],
-            [
-                'english_name'=>'soldier',
-                'serbian_name'=>'vojnik',
-                'image' => 'soldier.jpg'
-            ],
-            [
-                'english_name'=>'fear',
-                'serbian_name'=>'strah',
-                'image' => 'fear.jpg'
-            ],
-            [
-                'english_name'=>'relativity',
-                'serbian_name'=>'relativnost',
-                'image' => 'relativity.jpg'
-            ],
-            [
                 'english_name'=>'book',
-                'serbian_name'=>'knjiga',
+                'turkish_name'=>'kitap',
                 'image' => 'book.jpg'
             ],
             [
-                'english_name'=>'Earth',
-                'serbian_name'=>'Zemlja',
-                'image' => 'earth.jpg'
+                'english_name'=>'car',
+                'turkish_name'=>'araba',
+                'image' => 'car.jpg'
             ],
             [
-                'english_name'=>'speed limit',
-                'serbian_name'=>'ograničenje brzine',
-                'image' => 'speed_limit.jpg'
+                'english_name'=>'cat',
+                'turkish_name'=>'kedi',
+                'image' => 'cat.jpg'
+            ],
+            [
+                'english_name'=>'dog',
+                'turkish_name'=>'köpek',
+                'image' => 'dog.jpg'
+            ],
+            [
+                'english_name'=>'house',
+                'turkish_name'=>'ev',
+                'image' => 'house.jpg'
+            ],
+            [
+                'english_name'=>'mobile phone',
+                'turkish_name'=>'cep telefonu',
+                'image' => 'mobile-phone.jpg'
+            ],
+            [
+                'english_name'=>'orange',
+                'turkish_name'=>'portakal',
+                'image' => 'orange.jpg'
+            ],
+            [
+                'english_name'=>'pool',
+                'turkish_name'=>'havuz',
+                'image' => 'pool.jpg'
+            ],
+            [
+                'english_name'=>'tree',
+                'turkish_name'=>'ağaç',
+                'image' => 'tree.jpg'
             ],
         ]);
     }

@@ -16,7 +16,7 @@ class QuestionInitial extends Migration
         Schema::create('Questions', function (Blueprint $table) {
             $table->id();
             $table->string('english_name');
-            $table->string('serbian_name');
+            $table->string('turkish_name');
             $table->string('image');
             $table->timestamps();
         });
